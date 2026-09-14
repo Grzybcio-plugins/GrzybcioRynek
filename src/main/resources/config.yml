@@ -1,0 +1,270 @@
+settings:
+  max-listings-per-player: 10
+  listing-expiry-days: 7
+  gui-rows: 6
+  min-price: 1.0
+  max-price: 1000000.0
+
+market-fee:
+  enabled: true
+  listing-fee-percent: 0.0
+  sale-fee-percent: 5.0
+  minimum-fee: 0.0
+  maximum-fee: 0.0
+  # Opcjonalne konto Vault, na które trafia prowizja sprzedaży (puste = spalanie fee)
+  sink-account: ""
+
+history:
+  # Bramkuje GUI /market history. Transakcje i tak są zapisywane (refund/ratings).
+  enabled: true
+  retention-days: 30
+
+favorites:
+  enabled: true
+
+price-alerts:
+  enabled: true
+  max-per-player: 10
+
+anti-abuse:
+  enabled: true
+  max-purchases-from-same-player: 20
+  purchase-window-seconds: 86400
+  max-transaction-value: 10000000
+  listing-cooldown-seconds: 5
+
+transactions:
+  logging: true
+
+mailbox:
+  enabled: true
+
+ratings:
+  enabled: true
+
+stats:
+  enabled: true
+
+messages:
+  prefix: "&8[&bGrzybcioRynek&8] &7"
+  no-permission: "Nie masz uprawnień do tego!"
+  player-only: "Tylko gracze mogą używać tej komendy!"
+
+  sell:
+    success: "Wystawiono przedmiot &e{item} &7za &a{price}"
+    no-item: "Musisz trzymać przedmiot w ręce!"
+    invalid-price: "Nieprawidłowa cena! Cena musi być między &a{min} &7a &a{max}"
+    limit-reached: "Osiągnięto limit wystawionych przedmiotów ({limit})"
+    air-item: "Nie możesz sprzedać powietrza!"
+
+  buy:
+    success: "Kupiono &e{item} &7za &a{price}"
+    not-enough-money: "Nie masz wystarczająco pieniędzy! Potrzebujesz &c{price}"
+    own-listing: "Nie możesz kupić własnego przedmiotu!"
+    inventory-full: "Twój ekwipunek jest pełny!"
+    not-available: "Ten przedmiot nie jest już dostępny!"
+    transaction-failed: "Transakcja nie powiodła się. Spróbuj ponownie."
+    seller-notified: "Twój przedmiot &e{item} &7został sprzedany graczowi &e{buyer} &7za &a{price}"
+    listing-locked: "Oferta jest właśnie kupowana przez kogoś innego."
+
+  remove:
+    success: "Usunięto ofertę &e#{id}"
+    not-found: "Nie znaleziono oferty o ID &c#{id}"
+    not-owner: "To nie jest Twoja oferta!"
+
+  reload:
+    success: "Pomyślnie przeładowano konfigurację!"
+
+  expiry:
+    returned: "Twoja wygasła oferta &e{item} &7została zwrócona do ekwipunku."
+
+  my:
+    no-listings: "Nie masz aktywnych ofert."
+
+  search:
+    prompt: "Wpisz na czacie frazę do wyszukania (lub &ccancel&7):"
+    cancelled: "Anulowano."
+    no-results: "Brak ofert dla: &e{query}"
+
+  favorites:
+    added: "Dodano ofertę &e#{id} &7do ulubionych."
+    removed: "Usunięto ofertę &e#{id} &7z ulubionych."
+    disabled: "Ulubione są wyłączone."
+
+  mailbox:
+    received: "Przedmiot trafił do skrzynki rynku: &e{item}"
+    empty: "Twoja skrzynka jest pusta."
+    claimed: "Odebrano: &e{item}"
+    inventory-full: "Brak miejsca w ekwipunku — item pozostał w skrzynce."
+
+  alerts:
+    prompt-query: "Wpisz nazwę przedmiotu dla alertu (lub &ccancel&7):"
+    prompt-price: "Wpisz maksymalną cenę dla &e{query}&7 (lub &ccancel&7):"
+    created: "Utworzono alert: &e{query} &7≤ &a{price}"
+    removed: "Usunięto alert."
+    limit: "Osiągnięto limit alertów ({limit})."
+    triggered: "Alert! Oferta &e{item} &7za &a{price} &7(max &a{max}&7)"
+    disabled: "Alerty cenowe są wyłączone."
+
+  fee:
+    listing: "Prowizja za wystawienie: &c{fee}"
+    sale-preview: "Prowizja: &c{fee}&7 | Otrzymasz: &a{net}"
+    not-enough-listing: "Nie stać Cię na prowizję wystawienia (&c{fee}&7)."
+
+  price-hint: "Rynek: min &a{min}&7 | średnia &e{avg}&7 | max &c{max}"
+  price-hint-none: "Brak historii cen dla tego przedmiotu."
+
+  anti-abuse:
+    cooldown: "Odczekaj &e{seconds}s &7przed kolejnym wystawieniem."
+    max-value: "Wartość transakcji przekracza limit (&c{max}&7)."
+    same-player: "Osiągnięto limit zakupów od tego gracza ({limit})."
+
+  rating:
+    prompt: "Oceń sprzedawcę &e{seller}&7 (1-5) lub &ccancel&7:"
+    success: "Wystawiono ocenę &e{stars}★ &7dla &e{seller}"
+    invalid: "Ocena musi być liczbą od 1 do 5."
+    already: "Ta transakcja została już oceniona."
+
+  admin:
+    inspect-header: "&8--- Oferta #{id} ---"
+
+  relist:
+    prompt: "Wpisz cenę ponownego wystawienia (sugerowana &a{price}&7) lub &ccancel&7:"
+
+  gui:
+    title: "&8Rynek"
+    category:
+      all: "&eWszystko"
+      tools: "&cNarzędzia"
+      weapons: "&cBroń"
+      armor: "&cZbroja"
+      blocks: "&cBloki"
+      food: "&cJedzenie"
+      farming: "&cRolnictwo"
+      redstone: "&cRedstone"
+      decorations: "&cDekoracje"
+      potions: "&cMikstury"
+      enchanted_books: "&cEnchanted Books"
+      other: "&cInne"
+    page-indicator: "&eStrona {page}/{total}"
+    pagination:
+      previous: "&aPoprzednia strona"
+      next: "&aNastępna strona"
+      inactive: "&8—"
+    sort:
+      cheapest: "&aSort: najtańsze"
+      expensive: "&aSort: najdroższe"
+      newest: "&aSort: najnowsze"
+      oldest: "&aSort: najstarsze"
+      most-amount: "&aSort: największa ilość"
+      least-amount: "&aSort: najmniejsza ilość"
+    button:
+      search: "&eWyszukaj"
+      sort: "&eSortowanie: {sort}"
+      categories: "&eKategorie"
+      favorites: "&eUlubione"
+      my-listings: "&eMoje oferty"
+      history: "&eHistoria"
+      stats: "&eStatystyki"
+      mailbox: "&eSkrzynka"
+      alerts: "&eAlerty"
+      back: "&cPowrót"
+      close: "&cZamknij"
+    categories:
+      title: "&8Kategorie"
+    favorites:
+      title: "&8Ulubione"
+      empty: "&7Brak ulubionych ofert"
+    my:
+      title: "&8Moje oferty"
+      manage-title: "&8Zarządzaj ofertą"
+      click-manage: "&eKliknij, aby zarządzać"
+      remove: "&cUsuń ofertę"
+    history:
+      title: "&8Historia"
+      empty: "&7Brak historii"
+      tab-purchases: "&aZakupy"
+      tab-sales: "&aSprzedaż"
+      lore:
+        price: "&7Cena: &a{price}"
+        seller: "&7Sprzedawca: &e{seller}"
+        buyer: "&7Kupujący: &e{buyer}"
+        fee: "&7Prowizja: &c{fee}"
+        age: "&7Data: &e{time} &7temu"
+        rate: "&eKliknij, aby ocenić sprzedawcę"
+    stats:
+      title: "&8Statystyki rynku"
+      active-listings: "&eAktywne oferty"
+      your-listings: "&eTwoje oferty"
+      total-sales: "&eSprzedaże (rynek)"
+      total-volume: "&eObrót rynku"
+      spent: "&eTwoje wydatki"
+      earned: "&eTwoje zarobki"
+      your-sales: "&eTwoje sprzedaże"
+      value: "&7Wartość: &a{value}"
+    mailbox:
+      title: "&8Skrzynka rynku"
+      claim-all: "&aOdbierz wszystko"
+      lore:
+        reason: "&7Powód: &e{reason}"
+        age: "&7Od: &e{time}"
+        previous-price: "&7Poprzednia cena: &a{price}"
+        claim: "&aKliknij, aby odebrać"
+        relist: "&eShift+klik: wystaw ponownie"
+    alerts:
+      title: "&8Alerty cenowe"
+      empty: "&7Brak alertów"
+      add: "&aDodaj alert"
+      item-name: "&eAlert: {query}"
+      lore:
+        query: "&7Szukane: &f{query}"
+        price: "&7Max cena: &a{price}"
+        age: "&7Utworzono: &e{time} &7temu"
+        remove: "&cKliknij, aby usunąć"
+    detail:
+      title: "&8Szczegóły oferty"
+      missing: "&cOferta niedostępna"
+      buy: "&aKup"
+      cancel: "&cAnuluj"
+      favorite: "&eDodaj do ulubionych"
+      unfavorite: "&eUsuń z ulubionych"
+      seller-profile: "&eProfil: {seller}"
+    seller:
+      title: "&8Profil: {seller}"
+      name: "&e{seller}"
+      active-listings: "&eAktywne oferty"
+      sales: "&eSprzedane"
+      earned: "&eZarobione"
+      rating: "&eOcena: &a{rating}★"
+      rating-count: "&7Liczba ocen: &f{count}"
+      view-listings: "&aPokaż oferty gracza"
+    confirm:
+      title: "&8Potwierdzenie zakupu"
+      question: "&7Czy na pewno chcesz kupić?"
+      price: "&7Cena: &a{price}"
+      fee: "&7Prowizja: &c{fee}"
+      seller-net: "&7Sprzedawca otrzyma: &a{net}"
+      seller: "&7Sprzedawca: &e{seller}"
+      confirm: "&aTak, kupuję"
+      cancel: "&cAnuluj"
+    lore:
+      price: "&7Cena: &a{price}"
+      unit-price: "&7Cena/szt.: &a{unit}"
+      seller: "&7Sprzedawca: &e{seller}"
+      id: "&8ID: #{id}"
+      expires: "&7Wygasa za: &e{time}"
+      age: "&7Wystawiono: &e{time} &7temu"
+      click-to-buy: "&aKliknij aby kupić"
+      click-details: "&aKliknij, aby zobaczyć szczegóły"
+      your-listing: "&eTwoja oferta"
+      favorite: "&dUlubiona"
+    next-page: "&aNastępna strona"
+    previous-page: "&aPoprzednia strona"
+
+  usage:
+    main: "Użycie: &e/rynek &7| &e/market sell|my|search|history|mailbox|alerts|admin"
+    sell: "Użycie: &e/market sell <cena>"
+    wystaw: "Użycie: &e/wystaw <cena>"
+    remove: "Użycie: &e/market remove <id>"
+    search: "Użycie: &e/market search <fraza>"
+    alerts: "Użycie: &e/market alert add <fraza> <max-cena>"

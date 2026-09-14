@@ -1,0 +1,55 @@
+name: GrzybcioRynek
+version: '1.0.3'
+main: com.example.marketplace.MarketPlace
+api-version: '26.2'
+softdepend: [Nexo, Oraxen, PlaceholderAPI, Essentials]
+depend: [Vault]
+author: Grzybcio
+description: Profesjonalny rynek graczy (Auction House)
+
+commands:
+  market:
+    description: Główne polecenie rynku
+    aliases: [ah, rynek]
+    usage: |
+      /<command> - Otwórz rynek (GUI)
+      /<command> sell <cena> - Wystaw przedmiot
+      /<command> my - Moje oferty
+      /<command> search <fraza> - Szukaj
+      /<command> remove <id> - Usuń ofertę
+      /<command> reload - Przeładuj konfigurację
+  wystaw:
+    description: Wystaw przedmiot z ręki na rynek
+    usage: /<command> <cena>
+  aukcje:
+    description: Przeglądaj rynek
+    aliases: [rynek-gui, ah-gui]
+    usage: /<command>
+
+permissions:
+  market.use:
+    description: Pozwala używać podstawowych funkcji rynku
+    default: true
+  market.sell:
+    description: Pozwala wystawiać przedmioty na sprzedaż
+    default: true
+  market.history:
+    description: Historia transakcji
+    default: true
+  market.mailbox:
+    description: Skrzynka rynku
+    default: true
+  market.alerts:
+    description: Alerty cenowe
+    default: true
+  market.reload:
+    description: Pozwala przeładować konfigurację
+    default: op
+  market.admin:
+    description: Pozwala zarządzać rynkiem (admin)
+    default: op
+    children:
+      market.reload: true
+      market.history: true
+      market.mailbox: true
+      market.alerts: true

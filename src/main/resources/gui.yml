@@ -1,0 +1,119 @@
+# Konfiguracja układu GUI rynku
+# Sloty numerowane od 0
+
+browse:
+  size: 54
+
+  border-slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+
+  listing-slots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+
+  # Używane w MarketCategoryGUI (slot + material)
+  categories:
+    all:
+      slot: 10
+      material: NETHER_STAR
+    tools:
+      slot: 11
+      material: DIAMOND_PICKAXE
+    weapons:
+      slot: 12
+      material: DIAMOND_SWORD
+    armor:
+      slot: 13
+      material: DIAMOND_CHESTPLATE
+    blocks:
+      slot: 14
+      material: GRASS_BLOCK
+    food:
+      slot: 15
+      material: COOKED_BEEF
+    farming:
+      slot: 16
+      material: WHEAT
+    redstone:
+      slot: 19
+      material: REDSTONE
+    decorations:
+      slot: 20
+      material: PAINTING
+    potions:
+      slot: 21
+      material: POTION
+    enchanted_books:
+      slot: 22
+      material: ENCHANTED_BOOK
+    other:
+      slot: 23
+      material: CHEST
+
+  pagination:
+    previous: 39
+    page: 40
+    next: 41
+
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+
+confirm:
+  size: 27
+
+  slots:
+    confirm: 11
+    item: 13
+    cancel: 15
+
+  confirm-material: LIME_CONCRETE
+  cancel-material: RED_CONCRETE
+
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
